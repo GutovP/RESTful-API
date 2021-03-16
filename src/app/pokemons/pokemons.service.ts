@@ -22,8 +22,6 @@ export class PokemonsService {
   getPokemonDetails(name: any): Observable<PokemonsDetails> {
     return this.http.get<PokemonsDetails>(`${this.pokemonsUrl}/${name}`);
 
-    //   .pipe(
-    //     map((pokemons: PokemonsDetails) => pokemons.filter((pokemon: { name: any; }) => pokemon.name === name))
-    //   );
+
   }
 }
