@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+  background-color: aquamarine;
+  padding: 20px;
+}
+.sidenav {
+  height: auto;
+  width: 150px; /* Set the width of the sidebar */
+  position: fixed;
+  top: 100px; /* Stay at the top */
+  /* background-color: rgb(138, 131, 131); */
+  padding: 50px;
+}
+
+.main {
+  text-align: center;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+}

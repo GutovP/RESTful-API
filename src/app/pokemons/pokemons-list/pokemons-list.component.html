@@ -1,0 +1,5 @@
+<div *ngIf="pokemons">
+  <div *ngFor="let list of pokemons.results">
+    <a [routerLink]="['/', list.name]">{{ list.name | titlecase }}</a>
+  </div>
+</div>
