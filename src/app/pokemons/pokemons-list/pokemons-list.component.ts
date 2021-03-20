@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 import { PokemonsService } from '../pokemons.service';
-import { Pokemons, PokemonsDetails, Results } from '../pokemons';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Pokemons } from '../pokemons';
+
+
 
 
 @Component({
@@ -15,7 +14,7 @@ import { switchMap } from 'rxjs/operators';
 export class PokemonsListComponent implements OnInit {
   pokemons: Pokemons;
 
-  constructor(private pokemonsService: PokemonsService, private route: ActivatedRoute) { }
+  constructor(private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
     this.getAll();
@@ -25,7 +24,7 @@ export class PokemonsListComponent implements OnInit {
   getAll(): void {
     this.pokemonsService.getAllPokemons().subscribe(
       (data) => this.pokemons = data);
-
-
   }
+
+
 }

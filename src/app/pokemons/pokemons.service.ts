@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
 
 import { Pokemons, Results } from './pokemons';
-import { PokemonsDetails } from './pokemons';
+
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +18,9 @@ export class PokemonsService {
     return this.http.get<Pokemons>(this.pokemonsUrl);
   }
 
-  getPokemonDetails(name: any): Observable<PokemonsDetails> {
-    return this.http.get<PokemonsDetails>(`${this.pokemonsUrl}/${name}`);
-
+  getPokemonDetails(name: string): Observable<Results[]> {
+    const url = `${this.pokemonsUrl}/${name}`;
+    return this.http.get<Results[]>(url);
 
   }
 }

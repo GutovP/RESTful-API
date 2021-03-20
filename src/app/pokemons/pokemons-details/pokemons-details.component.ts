@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Pokemons, PokemonsDetails, Results } from '../pokemons';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { PokemonsService } from '../pokemons.service';
 
 @Component({
@@ -12,27 +12,26 @@ export class PokemonsDetailsComponent implements OnInit {
 
   pokemons: any[] = [];
 
-  constructor(private pokemonsService: PokemonsService) { }
+  constructor(
+    private pokemonsService: PokemonsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
+  }
 
   ngOnInit(): void {
     this.getDetails();
   }
-
-
   getDetails(): void {
-    this.pokemonsService.getAllPokemons().subscribe((data) => {
-      data.results.map(result => {
-        this.pokemonsService.getPokemonDetails(result.name)
-          .subscribe(res => {
-            this.pokemons.push(res);
 
-            console.log(result.name);
-            console.log(res);
+    const name = this.route.snapshot.paramMap.get('name');
+    this.pokemonsService.getPokemonDetails(name)
+      .subscribe(pokemons => this.pokemons.push(pokemons));
 
-          });
-      });
-    });
   }
-
 
 }
