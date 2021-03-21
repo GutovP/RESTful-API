@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PokemonsModule } from './pokemons/pokemons.module';
 import { MaterialModule } from './material/material.module';
-import { RouterModule } from '@angular/router';
+
+
 
 
 
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     PokemonsModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

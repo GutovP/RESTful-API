@@ -4,16 +4,19 @@ h1 {
   padding: 20px;
 }
 .sidenav {
-  height: auto;
-  width: 150px; /* Set the width of the sidebar */
+  height: 80vh;
+  width: 400px;
   position: fixed;
   top: 100px; /* Stay at the top */
   /* background-color: rgb(138, 131, 131); */
-  padding: 50px;
+  text-align: center;
 }
 
 .main {
   text-align: center;
+  width: 80vw;
+  margin-left: 15%;
+  height: 80vh;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */

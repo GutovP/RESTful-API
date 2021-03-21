@@ -1,5 +1,8 @@
 <div *ngIf="pokemons">
-  <div *ngFor="let list of pokemons.results">
+  <div *ngFor="let list of pokemons.results | paginate: { itemsPerPage: 25, currentPage: page, totalItems: totalPages}">
     <a [routerLink]="['/', list.name]">{{ list.name | titlecase }}</a>
   </div>
+</div>
+<div class="my-pages">
+  <pagination-controls (pageChange)="getAll(page = $event)" previousLabel="Prev"></pagination-controls>
 </div>

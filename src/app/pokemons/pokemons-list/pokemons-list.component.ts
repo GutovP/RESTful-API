@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PokemonsService } from '../pokemons.service';
-import { Pokemons } from '../pokemons';
+
 
 
 
@@ -12,18 +12,25 @@ import { Pokemons } from '../pokemons';
   styleUrls: ['./pokemons-list.component.css'],
 })
 export class PokemonsListComponent implements OnInit {
-  pokemons: Pokemons;
+  pokemons: any;
+  page = 1;
+  totalPages: number;
 
   constructor(private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
-    this.getAll();
+    this.getAll(this.page);
 
   }
 
-  getAll(): void {
-    this.pokemonsService.getAllPokemons().subscribe(
-      (data) => this.pokemons = data);
+  getAll(page: number): void {
+    this.pokemonsService.getAllPokemons(25, this.page + 5).subscribe(
+      (data) => {
+        this.pokemons = data;
+        this.totalPages = data.count;
+
+
+      });
   }
 
 

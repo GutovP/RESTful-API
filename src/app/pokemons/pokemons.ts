@@ -1,3 +1,5 @@
+export interface Pokemon extends Array<Pokemons> { }
+
 export interface Pokemons {
   count: number;
   next: string;
