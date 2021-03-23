@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { PokemonsListComponent } from './pokemons-list/pokemons-list.component';
 import { PokemonsDetailsComponent } from './pokemons-details/pokemons-details.component';
 import { PokemonsRoutingModule } from './pokemons-routing.module';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -18,7 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     PokemonsRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   exports: [
     PokemonsListComponent,
