@@ -3,9 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from '../pokemons.service';
 
 
-
-
-
 @Component({
   selector: 'app-pokemons-list',
   templateUrl: './pokemons-list.component.html',
@@ -19,7 +16,7 @@ export class PokemonsListComponent implements OnInit {
   constructor(private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
-    this.getAll(this.page);
+    this.getAll(this.pokemons);
 
   }
 
@@ -28,7 +25,6 @@ export class PokemonsListComponent implements OnInit {
       (data) => {
         this.pokemons = data;
         this.totalPages = data.count;
-
 
       });
   }

@@ -11,13 +11,13 @@ import { PokemonsService } from '../pokemons.service';
 export class PokemonsDetailsComponent implements OnInit {
 
   pokemons: any[] = [];
+  moves: any;
 
   constructor(
     private pokemonsService: PokemonsService,
     private route: ActivatedRoute,
     private router: Router
   ) {
-
     this.router.routeReuseStrategy.shouldReuseRoute = () => {
       return false;
     };
@@ -25,13 +25,12 @@ export class PokemonsDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDetails();
+
   }
   getDetails(): void {
-
     const name = this.route.snapshot.paramMap.get('name');
     this.pokemonsService.getPokemonDetails(name)
       .subscribe(pokemons => this.pokemons.push(pokemons));
-
   }
 
 }

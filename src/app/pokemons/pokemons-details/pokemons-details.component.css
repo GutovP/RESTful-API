@@ -4,3 +4,10 @@
   margin-left: 10%;
   margin-right: 25%;
 }
+
+.my-text {
+  text-align: left;
+}
+.my-text1 {
+  text-align: right;
+}
