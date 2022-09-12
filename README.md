@@ -1,6 +1,4 @@
-# EbcontTask
-
-## Task description
+# Task description
 
 1.By using the PokeAPI <https://pokeapi.co/> create a Pokedex of all existing Pokemon.
 
@@ -23,8 +21,6 @@ The Details-Page should display:
     Typescript
     PokeAPI: https://pokeapi.co/
     a minimum of 3 meaningful Unit Tests
-
-When done, please upload your app to GitHub and send me the link to the repo via Email. There is no time limit.
 
 ========================================================================================================================================================================
 
